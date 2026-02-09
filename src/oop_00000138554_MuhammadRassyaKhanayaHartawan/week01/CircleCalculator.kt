@@ -1,7 +1,6 @@
 package oop_00000138554_MuhammadRassyaKhanayaHartawan.week01 // Pastikan package sesuai
 
-fun main(args: Array<String>) {
-
+fun main() {
     val radius = 7.0
     val pi = 3.14
 
