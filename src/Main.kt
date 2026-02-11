@@ -6,36 +6,35 @@ fun main() {
 
     val scanner = Scanner(System.`in`)
 
-    println("=== SISTEM PENDAFTARAN ===")
-    println("1. Daftar dengan jurusan")
-    println("2. Daftar tanpa jurusan")
-    print("Pilih opsi: ")
-    val pilihan = scanner.nextInt()
-    scanner.nextLine()
+        println("--- APLIKASI PMB UMN ---")
 
-    print("Nama: ")
-    val name = scanner.nextLine()
+        print("Masukkan Nama: ")
+        val name = scanner.nextLine()
 
-    print("NIM (5 karakter): ")
-    val nim = scanner.next()
-    scanner.nextLine()
+        print("Masukkan NIM (Wajib 5 Karakter): ")
+        val nim = scanner.next()
 
-    if (nim.length != 5) {
-        println("ERROR: NIM harus 5 karakter.")
-        return
-    }
+        scanner.nextLine()
 
-    when (pilihan) {
-        1 -> {
-            print("Jurusan: ")
-            val major = scanner.nextLine()
-            val student = Student(name, nim, major)
-            println("Pendaftaran selesai.")
+        print("Masukkan Jurusan: ")
+        val major = scanner.nextLine()
+
+        // Object pertama (jalur reguler)
+        val studentReguler = Student(name, nim, major)
+
+        println("Status: Pendaftaran Selesai.")
+
+        println("Pilih Jalur (1. Reguler, 2. Umum): ")
+        val pilihan = scanner.nextInt()
+
+        when (pilihan) {
+            1 -> {
+                println("Terdaftar di: ${studentReguler.major} dengan GPA awal ${studentReguler.gpa}")
+            }
+            2 -> {
+                val studentUmum = Student(name, nim)
+                println("Terdaftar di: ${studentUmum.major} dengan GPA awal ${studentUmum.gpa}")
+            }
+            else -> println("Pilihan tidak valid.")
         }
-        2 -> {
-            val student = Student(name, nim)
-            println("Pendaftaran selesai (Non-Matriculated).")
-        }
-        else -> println("Pilihan tidak valid.")
     }
-}
