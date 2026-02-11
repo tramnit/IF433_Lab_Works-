@@ -1,17 +1,20 @@
 package oop_00000138554_MuhammmadRassyaKH_week02
 
-class Student (
+class Student(
     val name: String,
     val nim: String,
-    val major: String,
-){
+    var major: String
+) {
+
+    constructor(name: String, nim: String) : this(name, nim, "Non-Matriculated")
+
     init {
-        //Validasi Sederhana: Cek panjang NIM
-        if (nim.length != 5){
-            println("WARNING: Objek tercipta dengan NIM ($nim) yang tidak valid!")
-            println("Data mahasiswa $name mungkin akan bermasalah di sistem.")
-        } else {
-            println("LOG: Objek Student $name berhasil dialokasikan di Memory")
+        if (nim.length != 5) {
+            println("PERINGATAN: NIM harus 5 karakter!")
+        }
+
+        if (name.isBlank()) {
+            println("PERINGATAN: Nama tidak boleh kosong!")
         }
     }
 }
