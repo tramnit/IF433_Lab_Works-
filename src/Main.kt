@@ -3,27 +3,39 @@ package oop_00000138554_MuhammmadRassyaKH_week02
 import java.util.Scanner
 
 fun main() {
+
     val scanner = Scanner(System.`in`)
 
-    println("=== APLIKASI PMB UMM ===")
+    println("=== SISTEM PENDAFTARAN ===")
+    println("1. Daftar dengan jurusan")
+    println("2. Daftar tanpa jurusan")
+    print("Pilih opsi: ")
+    val pilihan = scanner.nextInt()
+    scanner.nextLine()
 
-    print("Masukkan Nama: ")
+    print("Nama: ")
     val name = scanner.nextLine()
 
-    print("Masukkan NIM (Wajib 5 karakter): ")
+    print("NIM (5 karakter): ")
     val nim = scanner.next()
-    scanner.nextLine() // Bersihkan buffer newline (Penyakit klasik Scanner!)
+    scanner.nextLine()
 
-    // Validasi di sisi pemanggil (Main)
     if (nim.length != 5) {
-        println("ERROR: Pendaftaran dibatalkan. NIM harus 5 karakter!")
-        // Program berhenti di sini untuk mahasiswa ini, tidak membuat objek
-    } else {
-        print("Masukkan Jurusan: ")
-        val major = scanner.nextLine()
+        println("ERROR: NIM harus 5 karakter.")
+        return
+    }
 
-        // Instansiasi objek karena data sudah aman
-        val s1 = Student(name, nim, major)
-        println("Status: Pendaftaran Selesai.")
+    when (pilihan) {
+        1 -> {
+            print("Jurusan: ")
+            val major = scanner.nextLine()
+            val student = Student(name, nim, major)
+            println("Pendaftaran selesai.")
+        }
+        2 -> {
+            val student = Student(name, nim)
+            println("Pendaftaran selesai (Non-Matriculated).")
+        }
+        else -> println("Pilihan tidak valid.")
     }
 }
