@@ -1,14 +1,29 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+package oop_00000138554_MuhammmadRassyaKH_week02
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+
+    println("=== APLIKASI PMB UMM ===")
+
+    print("Masukkan Nama: ")
+    val name = scanner.nextLine()
+
+    print("Masukkan NIM (Wajib 5 karakter): ")
+    val nim = scanner.next()
+    scanner.nextLine() // Bersihkan buffer newline (Penyakit klasik Scanner!)
+
+    // Validasi di sisi pemanggil (Main)
+    if (nim.length != 5) {
+        println("ERROR: Pendaftaran dibatalkan. NIM harus 5 karakter!")
+        // Program berhenti di sini untuk mahasiswa ini, tidak membuat objek
+    } else {
+        print("Masukkan Jurusan: ")
+        val major = scanner.nextLine()
+
+        // Instansiasi objek karena data sudah aman
+        val s1 = Student(name, nim, major)
+        println("Status: Pendaftaran Selesai.")
     }
 }
