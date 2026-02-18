@@ -12,5 +12,6 @@ fun main() {
     println(sword.damage)  // 0
     sword.damage = 9999  // 1000
     println(sword.tier)  // Legendary
+
 }
 
