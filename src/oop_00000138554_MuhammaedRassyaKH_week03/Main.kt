@@ -13,5 +13,10 @@ fun main() {
     sword.damage = 9999  // 1000
     println(sword.tier)  // Legendary
 
+    val p = Player("User")
+    p.addXp(50)  // Level 1
+    println(p.level)
+    p.addXp(60)  // Level Up! ke 2
+
 }
 
