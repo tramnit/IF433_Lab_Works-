@@ -1,3 +1,8 @@
+import oop_00000138554_MuhammmadRassyaKH_week02.Hero
+import oop_00000138554_MuhammmadRassyaKH_week02.Loan
+import oop_00000138554_MuhammmadRassyaKH_week02.Student
+import java.util.Scanner
+
 fun main() {
 
     val scanner = Scanner(System.`in`)
