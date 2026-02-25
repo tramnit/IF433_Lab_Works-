@@ -2,6 +2,10 @@ package oop_00000138554_MuhammadRassyaKH_week04
 
 open class Car(brand: String, val numberOfDoors: Int) : Vehicle(brand) {
 
+    override fun honk() {
+        println("TIN TIN! Mobil $brand lewat!")
+    }
+
     fun openTruck() {
         println("Bagasi mobil $brand dengan $numberOfDoors ")
     }
