@@ -30,4 +30,17 @@ fun main() {
     println("Luas Persegi: ${math.hitungLuas(5)}")
     println("Luas Persegi Panjang: ${math.hitungLuas(4, 6)}")
     println("Luas Lingkaran: ${math.hitungLuas(7.0)}")
+
+    // Inisialisasi objek sesuai instruksi modul
+    val myEWallet = EWallet("JohnThor Pay", 50000.0)
+    val myCreditCard = CreditCard("JohnThor Card", 100000.0)
+
+// Masukkan ke dalam list bertipe Parent (PaymentMethod)
+    val payments: List<PaymentMethod> = listOf(myEWallet, myCreditCard)
+
+    println("=== SIMULASI PEMBAYARAN (Checkpoint 10) ===")
+    for (payment in payments) {
+        // Memanggil fungsi abstract yang sudah di-override
+        payment.processPayment(75000.0)
+    }
 }
