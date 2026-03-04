@@ -35,12 +35,28 @@ fun main() {
     val myEWallet = EWallet("JohnThor Pay", 50000.0)
     val myCreditCard = CreditCard("JohnThor Card", 100000.0)
 
-// Masukkan ke dalam list bertipe Parent (PaymentMethod)
+    // Masukkan ke dalam list bertipe Parent (PaymentMethod)
     val payments: List<PaymentMethod> = listOf(myEWallet, myCreditCard)
 
     println("=== SIMULASI PEMBAYARAN (Checkpoint 10) ===")
     for (payment in payments) {
         // Memanggil fungsi abstract yang sudah di-override
         payment.processPayment(75000.0)
+
+        println("=== SIMULASI PEMBAYARAN DENGAN RECOVERY (Checkpoint 11) ===")
+        for (payment in payments) {
+            println("--- Transaksi untuk: ${payment.accountName} ---")
+            payment.processPayment(75000.0)
+
+            // Smart Casting Challenge: Cek apakah tipe objek adalah EWallet
+            if (payment is EWallet) {
+                println("=> Saldo kurang? Melakukan top up otomatis...")
+                payment.topUp(50000.0) // Memanggil fungsi spesifik EWallet [cite: 120]
+
+                println("=> Mencoba pembayaran ulang...")
+                payment.processPayment(75000.0) // Sekarang harusnya berhasil [cite: 121]
+            }
+            println()
+        }
     }
 }
