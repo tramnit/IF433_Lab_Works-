@@ -14,3 +14,4 @@ class EWallet(accountName: String, var balance: Double) : PaymentMethod(accountN
         balance += amount
         println("[$accountName] Berhasil top up sebesar $amount. Saldo sekarang: $balance")
     }
+}
