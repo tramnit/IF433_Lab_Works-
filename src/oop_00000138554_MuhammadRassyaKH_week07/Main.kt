@@ -1,5 +1,8 @@
 package oop_00000138554_MuhammadRassyaKH_week07
 
 fun main() {
-    val client = NetworkClient("https://api.umn.ac.id") // ERROR
+    DatabaseManager.connect()
+
+    val client = NetworkClient.create("https://api.umn.ac.id")
+    println("Client created with URL: ${client.baseUrl}")
 }
