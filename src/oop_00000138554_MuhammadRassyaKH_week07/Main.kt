@@ -33,4 +33,27 @@ fun main() {
         ApiResponse.Loading -> "Tampilkan Spinner"
     }
     println(uiMessage)
-}
+
+    // ... (Kode Test Singleton s/d Sealed Class yang sudah kamu buat sebelumnya) ...
+
+    println("\n=== SIMULASI GAME RPG ===")
+    // Checkpoint 18: Test Singleton [cite: 183]
+    GameManager.startGame()
+    GameManager.startGame() // Harus mencetak "Game sudah berjalan!" [cite: 183]
+
+    // Checkpoint 19: Factory & Enum [cite: 186, 187]
+    println("Drop Chance Legendary: ${ItemRarity.LEGENDARY.dropChance}%")
+    val mySword = Weapon.forgeStarterSword()
+    println("Senjata Awal: ${mySword.item.name}")
+
+    // Checkpoint 20: Copy & Events [cite: 191]
+    val upgradedSword = mySword.item.copy(damage = 25)
+
+    processEvent(BattleState.SafeZone)
+    processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
+    processEvent(BattleState.LootDropped(upgradedSword))
+    processEvent(BattleState.GameOver("Terkena jebakan racun"))
+} // Selesai: Hanya satu kurung kurawal penutup
+
+
+
