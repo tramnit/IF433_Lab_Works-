@@ -53,7 +53,7 @@ fun main() {
     processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
     processEvent(BattleState.LootDropped(upgradedSword))
     processEvent(BattleState.GameOver("Terkena jebakan racun"))
-} // Selesai: Hanya satu kurung kurawal penutu
+} // Selesai: Hanya satu kurung kurawal penutup
 
 
 
