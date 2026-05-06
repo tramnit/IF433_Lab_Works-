@@ -29,4 +29,10 @@ fun main() {
             println(str.length)
         }
     }
+
+    // CHECKPOINT 8
+    for (item in mixedList) {
+        val str = item as? String ?: "Default String"
+        println(str)
+    }
 }
