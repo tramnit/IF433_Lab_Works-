@@ -34,5 +34,13 @@ fun main() {
 
         val nullableString: String? = null
         println(nullableString!!.length)
+
+        val nullableString: String? = null
+
+        val safeString = requireNotNull(nullableString) {
+            "String should not be null"
+        }
+
+        println(safeString.length)
     }
 }
