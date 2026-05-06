@@ -1,6 +1,7 @@
 package oop_00000138554_MuhammadRassyaKH_week08
 
 fun main() {
+
     val order = Order(
         Customer(
             Address("Jakarta")
@@ -31,16 +32,13 @@ fun main() {
     for (item in mixedList) {
         val str = item as? String ?: "Default String"
         println(str)
-
-        val nullableString: String? = null
-        println(nullableString!!.length)
-
-        val nullableString: String? = null
-
-        val safeString = requireNotNull(nullableString) {
-            "String should not be null"
-        }
-
-        println(safeString.length)
     }
+
+    val nullableString: String? = null
+
+    val safeString = requireNotNull(nullableString) {
+        "String should not be null"
+    }
+
+    println(safeString.length)
 }
