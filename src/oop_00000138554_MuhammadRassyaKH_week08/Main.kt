@@ -35,4 +35,3 @@ fun main() {
         val str = item as? String ?: "Default String"
         println(str)
     }
-}
