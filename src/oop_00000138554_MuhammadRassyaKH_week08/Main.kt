@@ -12,13 +12,21 @@ fun main() {
 
     order.customer?.address?.city?.let {
         println("City found: $it")
+    }
 
-        val mixedList: List<Any> = listOf(
-            "Hello",
-            123,
-            "World",
-            true
-        )
+    // CHECKPOINT 6
+    val mixedList: List<Any> = listOf(
+        "Hello",
+        123,
+        "World",
+        true
+    )
+
+    // CHECKPOINT 7
+    for (item in mixedList) {
+        val str = item as? String
+        if (str != null) {
+            println(str.length)
+        }
     }
 }
-
