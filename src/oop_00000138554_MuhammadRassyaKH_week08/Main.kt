@@ -34,11 +34,6 @@ fun main() {
         println(str)
     }
 
-    val nullableString: String? = null
-
-    val safeString = requireNotNull(nullableString) {
-        "String should not be null"
-    }
-
-    println(safeString.length)
+    val data = LegacyJavaAPI.getData()!!
+    println(data)
 }
