@@ -11,4 +11,3 @@ data class Customer(
 data class Order(
     val customer: Customer?
 )
-
