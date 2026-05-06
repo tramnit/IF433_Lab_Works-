@@ -14,7 +14,6 @@ fun main() {
         println("City found: $it")
     }
 
-    // CHECKPOINT 6
     val mixedList: List<Any> = listOf(
         "Hello",
         123,
@@ -22,7 +21,6 @@ fun main() {
         true
     )
 
-    // CHECKPOINT 7
     for (item in mixedList) {
         val str = item as? String
         if (str != null) {
@@ -30,8 +28,11 @@ fun main() {
         }
     }
 
-    // CHECKPOINT 8
     for (item in mixedList) {
         val str = item as? String ?: "Default String"
         println(str)
+
+        val nullableString: String? = null
+        println(nullableString!!.length)
     }
+}
