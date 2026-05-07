@@ -11,5 +11,5 @@ fun main() {
     )
     val closedTrades = tradeHistory.filter { it.status == "CLOSED" }
     val winningTrades = closedTrades.filter { it.roe > 0 }
-// Commit message: "week09: (task) extract winning trades using filter"
+    val losingTrades = closedTrades.filter { it.roe <= 0 }
 }
