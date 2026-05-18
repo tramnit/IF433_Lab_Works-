@@ -13,3 +13,11 @@ fun main() {
     val txRepo = WalletRepository<Transaction>()
     txRepo.add(Transaction("TX001", 0.5))
     txRepo.add(Transaction("TX002", 1.2))
+
+    // Contoh penggunaan fungsi search dari WalletRepository (Langkah 4 / Checkpoint 14)
+    println("\n=== SEARCH RESULT ===")
+    val searchResult = coinRepo.search { it.name.contains("BTC", ignoreCase = true) }
+    searchResult.forEach { coin ->
+        println("Found: ${coin.name} with balance ${coin.balance}")
+    }
+}
