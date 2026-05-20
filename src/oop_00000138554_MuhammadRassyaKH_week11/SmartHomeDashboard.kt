@@ -31,3 +31,9 @@ fun main() {
     // Lanjutan fungsi main()
     val totalPower = homeDevices.run { sumOf { it.powerLoad } }
     println("Total Konsumsi Daya: $totalPower Watt")
+    // Akhir dari fungsi main() - Iterasi cetak diagnostik keseluruhan pipeline
+    println("\n=== ALL DEVICES DIAGNOSTIC ===")
+    homeDevices.forEach { device ->
+        println(device.diagnose())
+    }
+}
